@@ -17,7 +17,9 @@ finaly click downloade
 
 1- clone the repo
 
-2- type in the commandline or terminal 
+2- cd into the directory
+
+3- type in your commandLine or terminal 
 
 -    windows
 
@@ -30,4 +32,8 @@ finaly click downloade
 ```bash
 	pip3 install -r requirements.txt
 ```
+- or install them by typing
 
+```bash
+	pip install pytube && pip install tk
+```
