@@ -21,13 +21,13 @@ finaly click downloade
 
 -    windows
 
-    ```bash
-        pip install -r requirements.txt
-    ```
+```bash
+	pip install -r requirements.txt
+```
  
 -	mac or linux
     
-    ```bash
-        pip3 install -r requirements.txt
-    ```
+```bash
+    pip3 install -r requirements.txt
+```
 
