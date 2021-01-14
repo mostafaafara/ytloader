@@ -28,6 +28,6 @@ finaly click downloade
 -	mac or linux
     
 ```bash
-    pip3 install -r requirements.txt
+	pip3 install -r requirements.txt
 ```
 
