@@ -16,12 +16,17 @@ finaly click downloade
 ## Installation
 
 1- clone the repo
+
 2- type in the commandline or terminal 
-    windows
+
+-    windows
+
     ```bash
         pip install -r requirements.txt
     ```
-    mac or linux
+ 
+-	mac or linux
+    
     ```bash
         pip3 install -r requirements.txt
     ```
