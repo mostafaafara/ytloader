@@ -1,10 +1,10 @@
 # YTLOADER
 
-ytloader is a [youtube](www.youtube.com) downloader for entire playlists 
+ytloader is a [youtube](https://www.youtube.com) downloader for entire playlists 
 
 ## Hhow it works
 
-first you need o get a pulic [youtube](www.youtube.com) playlist url(link)
+first you need o get a pulic [youtube](https://www.youtube.com) playlist url(link)
 
 then fire up the program enter the url
 
