@@ -9,7 +9,7 @@ first you need o get a pulic [youtube](www.youtube.com) playlist url(link)
 then fire up the program enter the url
 
 slect where you want to save it 
--	default in the same directory(foleder)
+-	default in the same directory(folder)
 
 finaly click downloade
 
