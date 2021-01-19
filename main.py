@@ -1,53 +1,73 @@
 import tkinter as tk
 from tkinter import filedialog
+import sys
 from pytube import Playlist
 
 #TODO: add exceptions and assync
-#TODO: add a cli version 
+#TODO: add a cli version
 #TODO: make the programe class based
 
-win = tk.Tk()
+class test:
 
-win.title("ytloader")
+    def __init__(self):\
+        self.inp = sys.argv
 
-url = tk.StringVar()
-dirc = "./"
+    def downloadVid(self,url,dirc):
+        pl = Playlist(url)
+        count = 0
+        for video in pl.videos:
+            video.streams.get_lowest_resolution().download(output_path=dirc)
+            print(video.title)
+            self.listbox.insert(count,video.title)
+            count+=1
+        print()
 
-def downloadVid(url):
+    def cli(self):
+        dirc = self.inp[self.inp.index("-d")+1]\
+            if "-d" in self.inp else "./"
+        url = self.inp[self.inp.index("-u")+1]\
+            if "-u" in self.inp else exit("url is not specedied")
+        self.downloadVid(url,dirc)
+ 
+    def submitHandler(self):
+        a = self.url.get()
+        print(a)
+        self.url.set("")
+        self.downloadVid(a,self.dirc)
 
-    pl = Playlist(url)
-    count = 0
-    for video in pl.videos:
-        video.streams.get_lowest_resolution().download(output_path=dirc)
-        print(video.title)
-        listbox.insert(count,video.title)
-        count+=1
+    def brows(self):
+        folder = filedialog.askdirectory()
+        self.dirc = folder
 
-def submitHandler():
-    a = url.get()
-    print(a)
-    url.set("")
-    downloadVid(a)
+    def gui(self):
+        label  = tk.Label(self.win,text="Welcome to ytloader").grid(row=0,column=0,columnspan=2)
+        label2  = tk.Label(self.win,text="enter your playlist url").grid(row=1,column=0)
 
-def brows():
-    folder = filedialog.askdirectory()
-    global dirc 
-    dirc = folder
+        entry = tk.Entry(self.win,textvariable=self.url).grid(row=1,column=1)
 
-label  = tk.Label(win,text="Welcome to ytloader").grid(row=0,column=0,columnspan=2)
-label2  = tk.Label(win,text="enter your video url").grid(row=1,column=0)
+        buttonTitle = tk.Label(self.win,text="where you want to save:").grid(row=2,column=0)
+        browsbtn = tk.Button(self.win,text="brows",command=self.brows).grid(row=2,column=1)
 
-entry = tk.Entry(win,textvariable=url).grid(row=1,column=1)
+        listbox = tk.Listbox(self.win,width=30)
+        listbox.grid(row=3,column=0,columnspan=2)
 
-buttonTitle = tk.Label(win,text="where you want to save:").grid(row=2,column=0)
-browsbtn = tk.Button(win,text="brows",command=brows).grid(row=2,column=1)
+        submit = tk.Button(self.win,text="Download",command=self.submitHandler).grid(row=4,column=0,columnspan=2)
 
-listbox = tk.Listbox(win,width=30)
-listbox.grid(row=3,column=0,columnspan=2)
+        self.win.mainloop()                                
 
-submit = tk.Button(win,text="Download",command=submitHandler).grid(row=4,column=0,columnspan=2)
+    def main(self):
+        if len(self.inp) > 2:
+            self.cli()
+        else:
+            self.win = tk.Tk()
 
-win.mainloop()
+            self.win.title("ytloader")
 
+            self.url = tk.StringVar()
+            self.dirc = "./"
 
+            self.gui()
+      
 
+if __name__ == "__main__":
+    test().main()

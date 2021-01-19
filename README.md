@@ -1,39 +1,34 @@
 # YTLOADER
 
-ytloader is a [youtube](https://www.youtube.com) downloader for entire playlists 
+ytloader is a [youtube](https://www.youtube.com) downloader for entire playlists
 
-## Hhow it works
+## How it works
 
-first you need o get a pulic [youtube](https://www.youtube.com) playlist url(link)
+first you need o get a public [youtube](https://www.youtube.com) playlist url(link)
 
 then fire up the program enter the url
 
-slect where you want to save it 
+select where you want to save it
 -	default in the same directory(folder)
 
-finaly click downloade
+finally click download
 
 ## Installation
 
-1- clone the repo
+1. clone the repo
 
-2- cd into the directory
+2. cd into the directory
 
-3- type in your commandLine or terminal 
+3. type in your command Line or terminal
 
--    windows
 
 ```bash
-	pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
- 
--	mac or linux
-    
-```bash
-	pip3 install -r requirements.txt
-```
-- or install them by typing
+
+   --  or  --
 
 ```bash
-	pip install pytube && pip install tk
+$ python -m pip install git+https://github.com/pytube/pytube
+$ pip install tkinter
 ```
